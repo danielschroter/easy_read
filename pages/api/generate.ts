@@ -1,5 +1,7 @@
 import { OpenAIStream, OpenAIStreamPayload } from "../../utils/OpenAIStream";
 
+import { OpenAIRequest, OpenAIRequestPayload } from "../../utils/OpenAIRequest";
+
 if (!process.env.OPENAI_API_KEY) {
   throw new Error("Missing env var from OpenAI");
 }
@@ -12,6 +14,7 @@ const handler = async (req: Request): Promise<Response> => {
   const { prompt } = (await req.json()) as {
     prompt?: string;
   };
+  // const { prompt } = req.body;
 
   if (!prompt) {
     return new Response("No prompt in the request", { status: 400 });
@@ -30,6 +33,7 @@ const handler = async (req: Request): Promise<Response> => {
   };
 
   const stream = await OpenAIStream(payload);
+  //  return new Response(data);
   return new Response(stream);
 };
 

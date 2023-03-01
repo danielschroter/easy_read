@@ -4,6 +4,8 @@ import {
   ReconnectInterval,
 } from "eventsource-parser";
 
+import { Configuration, OpenAIApi } from "openai";
+
 export interface OpenAIStreamPayload {
   model: string;
   prompt: string;
