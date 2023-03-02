@@ -1,21 +1,55 @@
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 export default function Header() {
   return (
-    <header className="flex justify-between items-center w-full mt-5 border-b-2 pb-7 sm:px-4 px-2">
-      <Link href="/" className="flex space-x-3">
-        <Image
-          alt="header text"
-          src="/writingIcon.png"
-          className="sm:w-12 sm:h-12 w-8 h-8"
-          width={32}
-          height={32}
-        />
-        <h1 className="sm:text-4xl text-2xl font-bold ml-2 tracking-tight tracking-widest">
-          easy read
-        </h1>
-      </Link>
+    <header className="flex sticky top-0 p-4 max-w-7xl mx-auto justify-between items-center w-full border-b-2  sm:px-4  px-2">
+      <motion.div
+        initial={{
+          x: -500,
+          opacity: 0,
+          scale: 0.5,
+        }}
+        animate={{
+          x: 0,
+          opacity: 1,
+          scale: 1,
+        }}
+        transition={{
+          duration: 1,
+        }}
+      >
+        <Link href="/" className="flex space-x-3 items-center px-2">
+          <Image
+            alt="header text"
+            src="/writingIcon.png"
+            className="sm:w-10 sm:h-10 w-8 h-8"
+            width={32}
+            height={32}
+          />
+          <h2 className="sm:text-2xl text-2xl font-bold ml-2 tracking-widest">
+            einfach.
+          </h2>
+        </Link>
+      </motion.div>
+      <motion.div
+        initial={{
+          x: 500,
+          opacity: 0,
+          scale: 0.5,
+        }}
+        animate={{
+          x: 0,
+          opacity: 1,
+          scale: 1,
+        }}
+        transition={{
+          duration: 1,
+        }}
+      >
+        <button className="mx-4">Sign Up</button>
+      </motion.div>
     </header>
   );
 }
