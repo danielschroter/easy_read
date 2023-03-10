@@ -61,13 +61,13 @@ export default function Hero({}: Props) {
 
   return (
     <div className="flex w-full flex-col items-center justify-center text-center px-4 mt-12 sm:mt-20">
-      <div className="relative w-full max-w-lg">
+      <div className="relative w-full max-w-xl">
         <div className="absolute top-0 w-64 h-64 bg-indigo-400 rounded-full -left-4 filter blur-3xl opacity-20 sm:opacity-30 animate-blob"></div>
         <div className="absolute top-0 rounded-full w-72 h-72 bg-pink-300 -right-4 filter blur-3xl opacity-20 sm:opacity-30 animate-blob animation-delay-2000"></div>
         <div className="absolute rounded-full w-72 h-72 bg-emerald-300 -bottom-8 left-20 filter blur-3xl opacity-20 sm:opacity-30 animate-blob animation-delay-4000"></div>
         <div className="relative space-y-4">
           <div className="flex flex-auto flex-col items-center">
-            <h1 className="sm:text-6xl text-4xl max-w-2xl font-bold">
+            <h1 className="sm:text-5xl text-4xl max-w-2xl font-bold">
               Übersetze deinen Text in Leichte Sprache!
             </h1>
             <p className="text-slate-500 mt-5">
@@ -75,9 +75,9 @@ export default function Hero({}: Props) {
             </p>
             <div className="max-w-xl w-full">
               <div className="flex mt-10 items-center space-x-3">
-                <div className="text-white bg-orange-700 rounded-full p-2">
+                {/* <div className="text-white bg-emerald-500 rounded-full p-2">
                   1
-                </div>
+                </div> */}
                 <p className="text-left font-medium">
                   Kopiere deinen Text{" "}
                   <span className="text-slate-500">
@@ -96,7 +96,7 @@ export default function Hero({}: Props) {
 
               {!loading && (
                 <button
-                  className="bg-orange-700/70 backdrop-blur-xl rounded-xl text-white font-medium px-4 py-2 sm:mt-10 mt-8 hover:bg-orange-700/80 w-full"
+                  className="bg-emerald-500/70 backdrop-blur-xl rounded-xl text-white font-medium px-4 py-2 sm:mt-6 mt-8 hover:bg-emerald-500/80 w-full"
                   onClick={(e) => generateBio(e)}
                 >
                   Text übersetzen &rarr;
@@ -104,7 +104,7 @@ export default function Hero({}: Props) {
               )}
               {loading && (
                 <button
-                  className="bg-black rounded-xl text-white font-medium px-4 py-2 sm:mt-10 mt-8 hover:bg-black/80 w-full"
+                  className="bg-black rounded-xl text-white font-medium px-4 py-2 sm:mt-6 mt-8 hover:bg-black/80 w-full"
                   disabled
                 >
                   <LoadingDots color="white" style="large" />
@@ -119,15 +119,15 @@ export default function Hero({}: Props) {
             <hr className="h-px bg-gray-700 border-1 dark:bg-gray-700" />
             <ResizablePanel>
               <AnimatePresence mode="wait">
-                <motion.div className="space-y-10 my-10">
+                <motion.div className="space-y-10 my-12">
                   {generatedBios && (
                     <>
                       <div>
-                        <h2 className="sm:text-4xl text-3xl font-bold mx-auto">
+                        <h2 className="sm:text-3xl text-3xl font-bold mx-auto">
                           Dein Text in leichter Sprache
                         </h2>
                       </div>
-                      <div className="space-y-8 flex flex-col items-center justify-center max-w-xl mx-auto">
+                      <div className="space-y-6 flex flex-col items-center justify-center max-w-xl mx-auto">
                         {generatedBios.split("2.").map((generatedBio) => {
                           return (
                             <div

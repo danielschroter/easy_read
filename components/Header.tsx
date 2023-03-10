@@ -5,7 +5,7 @@ import { TbWriting } from "react-icons/tb";
 
 export default function Header() {
   return (
-    <header className="flex sticky z-10 top-0 p-4 max-w-7xl mx-auto justify-between items-center w-full border-b-2  sm:px-4  px-2 bg-slate-900">
+    <header className="flex p-4 max-w-7xl mx-auto justify-between items-center w-full  sm:px-4  px-2">
       <motion.div
         initial={{
           x: -500,
