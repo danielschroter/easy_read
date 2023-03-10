@@ -64,7 +64,7 @@ const Home: NextPage = () => {
   };
 
   return (
-    <main className="bg-[rgb(34,34,34)] text-white min-h-screen ">
+    <main className=" min-h-screen flex flex-col overflow-hidden justify-between text-gray-200 bg-slate-900">
       {/* <div className="max-w-5xl max-auto"> */}
       <Head>
         <title>Einfach.</title>

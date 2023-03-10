@@ -1,10 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { TbWriting } from "react-icons/tb";
 
 export default function Header() {
   return (
-    <header className="flex sticky top-0 p-4 max-w-7xl mx-auto justify-between items-center w-full border-b-2  sm:px-4  px-2">
+    <header className="flex sticky z-10 top-0 p-4 max-w-7xl mx-auto justify-between items-center w-full border-b-2  sm:px-4  px-2 bg-slate-900">
       <motion.div
         initial={{
           x: -500,
@@ -21,13 +22,7 @@ export default function Header() {
         }}
       >
         <Link href="/" className="flex space-x-3 items-center px-2">
-          <Image
-            alt="header text"
-            src="/writingIcon.png"
-            className="sm:w-10 sm:h-10 w-8 h-8"
-            width={32}
-            height={32}
-          />
+          <TbWriting className="w-8 h-8"></TbWriting>
           <h2 className="sm:text-2xl text-2xl font-bold ml-2 tracking-widest">
             einfach.
           </h2>
@@ -48,7 +43,7 @@ export default function Header() {
           duration: 1,
         }}
       >
-        <button className="mx-4">Sign Up</button>
+        {/* <button className="mx-4">Sign Up</button> */}
       </motion.div>
     </header>
   );

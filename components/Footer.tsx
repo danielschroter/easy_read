@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="flex p-4 max-w-7xl mx-auto justify-between items-center w-full border-b-2  sm:px-4  px-2">
+    <footer className="flex p-4 max-w-7xl my-3 mx-auto justify-between items-center w-full border-b-2  sm:px-4  px-2 bg-slate-900">
       <div>
         Adapted by{" "}
         <a
